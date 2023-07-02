@@ -3,14 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheey" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carlos Gonzalez</title>
   </head>
   <body>
-    <div id="app"></div>
     <script type="module" src="/main.js"></script>
 
-    <canvas id="bg"></canvas>
+    <!-- Background -->
+    <div class="video-overlay"></div>
+
+    <div id="video-background">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="./Backgrounds/netwatcher.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="content">
+      <!-- Header -->
+      <header class="">
+          <div class="left">
+            <div class="hero-container">
+              <div class="hero glitch layers" data-text="Carlos Gonzalez, Developer"><span>Carlos Gonzalez, Developer</span></div>
+            </div>
+          </div>
+        <div class="right">
+          <div class="png-container">
+            <div class="png-effect glitch layers">
+              <a href="https://github.com/uvhash">
+               <img src="./Pictures/github-mark-white.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="cyber-h"></div>
+
+      <div class="testing-lines-middle"></div>
+      <div class="testing-lines-right-horizontal"></div>
+      <div class="testing-lines-right-vertical"></div>
+
+      <!-- Body -->
+    </div>
   </body>
 </html>
