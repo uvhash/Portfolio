@@ -15,41 +15,6 @@
   src: url(./Fonts/Blender-Pro-Bold.otf) format("opentype");
 }
 
-.testing-lines-middle {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: #ff0055;
-  pointer-events: none;
-  z-index: 9999;
-}
-.testing-lines-right-horizontal {
-  content: "";
-  position: fixed;
-  top: 50%;
-  right: 0;
-  height: 1px;
-  width: 50%;
-  background: #ff0055;
-  pointer-events: none;
-  z-index: 9999;
-}
-.testing-lines-right-vertical {
-  content: "";
-  position: fixed;
-  top: 50%;
-  right: 25%;
-  bottom: 0;
-  width: 1px;
-  background: #ff0055;
-  pointer-events: none;
-  z-index: 9999;
-
-}
-
 html {
   color: #ff0055;
   position: relative;
@@ -656,7 +621,7 @@ body {
 .cyber-h {
   display: block;
   width: 100%;
-  margin-bottom: 0px;  /* Add this line, adjust value as needed */
+  margin-bottom: 20px;  /* Add this line, adjust value as needed */
   filter: drop-shadow(0 1px 3px);
 }
 
@@ -667,4 +632,124 @@ body {
   display: block;
   background-color: #ff0055;
   clip-path: polygon(0 0, 0 100%, 21% 100%, calc(21% + 4px) 2px, 100% 2px, 100% 0);
+}
+
+/* Text Box Settings */
+
+
+.body-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-gap: 30px;
+  height: 85vh;
+  width: 98%;
+  color: #120b10;
+}
+
+.about-box {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+  margin-left: 20px;
+  scrollbar-width: none;
+  z-index: 2;
+
+  filter: drop-shadow(0 100px 100px);
+
+  --aug-br: 50px;
+  --aug-l-extend1: 20%;
+  --aug-l-offset: 30%;
+  --aug-l-inset1: 0%;
+
+  --aug-border: initial;
+  --aug-border-bg: #ff0055; 
+  --aug-border-all: 2px;
+
+  --aug-inlay: initial;
+  --aug-inlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+.about-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 100%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-text {
+  font-family: BlenderProBook;
+  font-size: 40px;
+  padding-left: 40px;
+
+  color: #ff0055;
+  filter: drop-shadow(0 1px 3px);
+}
+
+.projects-box {
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 2;
+  margin-right: 20px;
+
+  filter: drop-shadow(0 1px 3px);
+
+  --aug-br: 50px;
+
+  --aug-border: initial;
+  --aug-border-bg: #ff0055;
+  --aug-border-all: 2px;
+
+  --aug-inlay: initial;
+  --aug-inlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2;
+  grid-row: 2;
+  grid-gap: 30px;
+  width: 100%;
+}
+
+.skills-box {
+  grid-column: 1;
+  z-index: 2;
+
+  filter: drop-shadow(0 1px 3px);
+
+  --aug-tl-inset1: 15%;
+  --aug-tr-inset2: 15%;
+  --aug-r-extend1: 40%;
+  --aug-br: 50px;
+
+  --aug-border: initial;
+  --aug-border-bg: #ff0055;
+  --aug-border-all: 2px;
+
+  --aug-inlay: initial;
+  --aug-inlay-bg: rgba(1, 1, 1, 0.5);
+}
+
+.contact-box {
+  grid-column: 2;
+  z-index: 2;
+  margin-right: 20px;
+
+  filter: drop-shadow(0 1px 3px);
+
+  --aug-tl-inset1: 15%;
+  --aug-tr-inset2: 15%;
+  --aug-br: 50px;
+
+  --aug-border: initial;
+  --aug-border-bg: #ff0055;
+  --aug-border-all: 2px;
+
+  --aug-inlay: initial;
+  --aug-inlay-bg: rgba(0, 0, 0, 0.5);
 }
