@@ -634,9 +634,29 @@ body {
   clip-path: polygon(0 0, 0 100%, 21% 100%, calc(21% + 4px) 2px, 100% 2px, 100% 0);
 }
 
-/* Text Box Settings */
+.cyber-h-left {
+  display: block;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotate(90deg) translateX(-50%);
+  transform-origin: right top;
+  filter: drop-shadow(0 1px 3px);
+}
 
+.cyber-h-left::after {
+  content: '';
+  width: 100%;
+  height: 6px;
+  display: block;
+  background-color: #ff0055;
+  clip-path: polygon(0 0, 0 100%, 21% 100%, calc(21% + 4px) 2px, 100% 2px, 100% 0);
+}
 
+/* Grid Box Settings */
 .body-container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -654,8 +674,6 @@ body {
   scrollbar-width: none;
   z-index: 2;
 
-  filter: drop-shadow(0 100px 100px);
-
   --aug-br: 50px;
   --aug-l-extend1: 20%;
   --aug-l-offset: 30%;
@@ -667,28 +685,9 @@ body {
 
   --aug-inlay: initial;
   --aug-inlay-bg: rgba(0, 0, 0, 0.5);
+
+  filter: drop-shadow(0 100px 100px);
 }
-
-.about-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 100%, transparent 50%);
-  pointer-events: none;
-}
-
-.about-text {
-  font-family: BlenderProBook;
-  font-size: 40px;
-  padding-left: 40px;
-
-  color: #ff0055;
-  filter: drop-shadow(0 1px 3px);
-}
-
 .projects-box {
   grid-column: 2;
   grid-row: 1;
@@ -752,4 +751,40 @@ body {
 
   --aug-inlay: initial;
   --aug-inlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+/* Text box settings */
+.about-content {
+  font-family: BlenderProBook;
+  font-size: 40px;
+  padding-left: 40px;
+  height: 700px;
+  overflow-y: auto;
+  position: relative;
+
+  scrollbar-width: 10px;
+  scrollbar-color: rgba(255, 0, 85, 1) rgba(255, 255, 255, 0);
+  scroll-margin-right: 0px;
+
+  color: #ff0055;
+  filter: drop-shadow(0 1px 3px);
+}
+.about-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.projects-content {
+  flex: 1;
+  overflow: hidden;
+  overflow-x: auto;
+  position: relative;
+}
+.projects-content::after {
+  animation: scroll 20s linear infinite;
+  height: 700px;
 }
