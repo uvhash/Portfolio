@@ -12,6 +12,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "augmented-ui": "^2.0.0"
+    "augmented-ui": "^2.0.0",
+    "gsap": "^3.12.2"
   }
 }

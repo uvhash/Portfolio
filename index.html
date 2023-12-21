@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,47 +8,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carlos Gonzalez</title>
   </head>
+
   <body>
-    <script type="module" src="/main.js"></script>
-
-    <!-- Background -->
-    <div class="video-overlay"></div>
-
-    <div id="video-background">
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="./Backgrounds/netwatcher.mp4" type="video/mp4">
-      </video>
+    <div id="EnterView">
+      <div class="_t1 hero glitch layers" data-text="Carlos Gonzalez">
+        Carlos Gonzalez
+      </div>
+      <div class="_t2 hero glitch layers" data-text="Portfolio">Portfolio</div>
     </div>
 
-    <div id="content">
+    <div id="Page">
+      <!-- Background -->
+
+      <div id="Background">
+        <canvas></canvas>
+      </div>
+
+      <div class="video-overlay"></div>
+      <div id="video-background">
+        <video
+          playsinline="playsinline"
+          autoplay="autoplay"
+          muted="muted"
+          loop="loop"
+        >
+          <source src="./Backgrounds/netwatcher.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Mask -->
+      <!--
+      <div class="mask" id="Mask">
+        <div class="mask_top"></div>
+        <div class="mask_bottom"></div>
+        <div class="mask_left"></div>
+        <div class="mask_right"></div>
+      </div>
+-->
+      <!-- Frame -->
+      <div class="frame" id="Frame">
+        <div class="frame_line frame_line-left"></div>
+        <div class="frame_line frame_line-right"></div>
+        <div class="frame_line frame_line-top"></div>
+        <div class="frame_line frame_line-bottom"></div>
+      </div>
+
       <!-- Header -->
-      <header class="">
-          <div class="left">
-            <div class="hero-container">
-              <div class="hero glitch layers" data-text="Carlos Gonzalez, Developer"><span>Carlos Gonzalez, Developer</span></div>
-            </div>
-          </div>
-        <div class="right">
-          <div class="png-container">
-            <div class="png-effect glitch layers">
-              <a href="https://github.com/uvhash">
-               <img src="./Pictures/github-mark-white.png">
-              </a>
-            </div>
-          </div>
-          <div class="png-container">
-            <div class="png-effect glitch layers">
-              <a href="https://github.com/uvhash">
-               <img src="./Pictures/linkedWhite72.png">
-              </a>
-            </div>
-          </div>
-        </div>
+      <header class="siteHeader" id="SiteHeader">
+        <h1 class="siteHeader_title">Carlos Gonzalez</h1>
+        <p class="siteHeader_label">Junior Developer</p>
+        <nav class="siteHeader_nav" x-data>
+          <ol>
+            <li :class="{ 'is-selected': $store.ui.currentPath === '/' }">
+              <div class="_dot">#916;</div>
+              <a class="_text" href="/">Home</a>
+            </li>
+            <li
+              :class="{ 'is-selected': $store.ui.currentPath === '/projects/' }"
+            >
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/projects/">Projects</a>
+            </li>
+            <li :class="{ 'is-selected': $store.ui.currentPath === '/info/' }">
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/info/">Info</a>
+            </li>
+            <li
+              :class="{ 'is-selected': $store.ui.currentPath === '/contact/' }"
+            >
+              <div class="_dot">&#x25cf;</div>
+              <a class="_text" href="/contact/">Contact</a>
+            </li>
+          </ol>
+        </nav>
       </header>
-      <!-- Header decoration -->
-      <div class="cyber-h"></div>
+
+      <!-- Home -->
+
+      <main class="content" id="Content" data-scroll="area">
+        <div class="content_inner" data-scroll="target">
+          <section class="page" data-page="home">
+            <div class="page_content home">
+              <p class="home_aboutme">
+                <span>Some text for now</span>
+              </p>
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section class="page" data-page="projects">
+            <div class="page_content project">
+              <h2 class="project_section">Projects</h2>
+              <div class="project_list">
+                <a
+                  class="project_item text-btn"
+                  href="https://github.com/uvhash"
+                  target="_blank"
+                >
+                  <div class="project_title">Github</div>
+                  <div class="project_info">My Github</div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Info -->
+
+          <section class="page" data-page="info">
+            <div class="page_content info">
+              <div class="info_item info_item-1">
+                <div class="info_content">
+                  <ul>
+                    <li>
+                      <a
+                        class="text-btn"
+                        href="https://github.com/uvhash"
+                        target="_blank"
+                        rel="noopener"
+                        >Github</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact -->
+
+          <section class="page" data-page="contact">
+            <div class="page_content contact">
+              <div class="contact_wrap">
+                <a
+                  class="contact_text jp text-btn"
+                  href="https://google.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Some text ↗</a
+                >
+                <a
+                  class="contact_text en text-btn"
+                  href="https:google.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Contact Form ↗</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
     </div>
 
+    <!-- Scripts -->
 
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
